@@ -6,17 +6,64 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXFileReference section */
-		5DBE16C52FBD9956001F539B /* timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timetable.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		5D59CD5D2FC097DF00CBF713 /* timetableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD5A2FC097DF00CBF713 /* timetableApp.swift */; };
+		5D59CD5E2FC097DF00CBF713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D59CD572FC097DF00CBF713 /* Assets.xcassets */; };
+		5D59CD622FC0A4DA00CBF713 /* ScheduleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD612FC0A4DA00CBF713 /* ScheduleScreen.swift */; };
+		5D59CD662FC0A54000CBF713 /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD652FC0A54000CBF713 /* EventCard.swift */; };
+		5D59CD692FC0A59800CBF713 /* WeekDateBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD682FC0A59800CBF713 /* WeekDateBar.swift */; };
+		5D59CD6B2FC0A5A400CBF713 /* TimeAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD6A2FC0A5A400CBF713 /* TimeAxis.swift */; };
+		5D59CD6E2FC0A66300CBF713 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD6D2FC0A66300CBF713 /* AppColors.swift */; };
+		5D59CD712FC0A78A00CBF713 /* CourseCardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD702FC0A78A00CBF713 /* CourseCardColor.swift */; };
+		5D59CD732FC0A79E00CBF713 /* EventCardColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD722FC0A79E00CBF713 /* EventCardColors.swift */; };
+		5D59CD762FC0A7F800CBF713 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD752FC0A7F800CBF713 /* AppFonts.swift */; };
+		5D59CD792FC0A80C00CBF713 /* AppSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD782FC0A80C00CBF713 /* AppSpacing.swift */; };
+		5D59CD7C2FC0A8D400CBF713 /* CircleIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD7B2FC0A8D400CBF713 /* CircleIconButton.swift */; };
+		5D59CD7E2FC0A8E600CBF713 /* EmptySlotCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD7D2FC0A8E600CBF713 /* EmptySlotCard.swift */; };
+		5D59CD812FC0A8FA00CBF713 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD802FC0A8FA00CBF713 /* DateCell.swift */; };
+		5D59CD832FC0A92300CBF713 /* TimeAxisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD822FC0A92300CBF713 /* TimeAxisCell.swift */; };
+		5D59CD852FC0A95300CBF713 /* BottomToggleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD842FC0A95300CBF713 /* BottomToggleBar.swift */; };
+		5D59CD892FC0BBDA00CBF713 /* TextColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD882FC0BBDA00CBF713 /* TextColors.swift */; };
+		5DBE16DA2FBDDE94001F539B /* CourseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16D92FBDDE94001F539B /* CourseCard.swift */; };
+		5DBE16DC2FBEA512001F539B /* TopHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16DB2FBEA512001F539B /* TopHeader.swift */; };
+		5DBE16E12FBEA600001F539B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16DE2FBEA600001F539B /* Course.swift */; };
+		5DBE16E22FBEA600001F539B /* ScheduleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16DF2FBEA600001F539B /* ScheduleEvent.swift */; };
+		5DBE16E32FBEA600001F539B /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16E02FBEA600001F539B /* MockData.swift */; };
+		5DBE16E42FBEA600001F539B /* TimetableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16E52FBEA600001F539B /* TimetableConfig.swift */; };
+		5DBE16E62FBEA600001F539B /* TimeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16E72FBEA600001F539B /* TimeMapper.swift */; };
+		5DBE16E92FBEA600001F539B /* CardCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16EA2FBEA600001F539B /* CardCornerRadius.swift */; };
+		5DBE16EB2FBEA600001F539B /* ScheduleScreenFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16EC2FBEA600001F539B /* ScheduleScreenFlat.swift */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		5DBE16C72FBD9956001F539B /* timetable */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = timetable;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		5D59CD572FC097DF00CBF713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D59CD5A2FC097DF00CBF713 /* timetableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableApp.swift; sourceTree = "<group>"; };
+		5D59CD612FC0A4DA00CBF713 /* ScheduleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreen.swift; sourceTree = "<group>"; };
+		5D59CD652FC0A54000CBF713 /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
+		5D59CD682FC0A59800CBF713 /* WeekDateBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDateBar.swift; sourceTree = "<group>"; };
+		5D59CD6A2FC0A5A400CBF713 /* TimeAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAxis.swift; sourceTree = "<group>"; };
+		5D59CD6D2FC0A66300CBF713 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		5D59CD702FC0A78A00CBF713 /* CourseCardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCardColor.swift; sourceTree = "<group>"; };
+		5D59CD722FC0A79E00CBF713 /* EventCardColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardColors.swift; sourceTree = "<group>"; };
+		5D59CD752FC0A7F800CBF713 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		5D59CD782FC0A80C00CBF713 /* AppSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpacing.swift; sourceTree = "<group>"; };
+		5D59CD7B2FC0A8D400CBF713 /* CircleIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIconButton.swift; sourceTree = "<group>"; };
+		5D59CD7D2FC0A8E600CBF713 /* EmptySlotCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySlotCard.swift; sourceTree = "<group>"; };
+		5D59CD802FC0A8FA00CBF713 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		5D59CD822FC0A92300CBF713 /* TimeAxisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAxisCell.swift; sourceTree = "<group>"; };
+		5D59CD842FC0A95300CBF713 /* BottomToggleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToggleBar.swift; sourceTree = "<group>"; };
+		5D59CD882FC0BBDA00CBF713 /* TextColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColors.swift; sourceTree = "<group>"; };
+		5DBE16C52FBD9956001F539B /* timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timetable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DBE16D92FBDDE94001F539B /* CourseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCard.swift; sourceTree = "<group>"; };
+		5DBE16DB2FBEA512001F539B /* TopHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeader.swift; sourceTree = "<group>"; };
+		5DBE16DE2FBEA600001F539B /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		5DBE16DF2FBEA600001F539B /* ScheduleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEvent.swift; sourceTree = "<group>"; };
+		5DBE16E02FBEA600001F539B /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		5DBE16E52FBEA600001F539B /* TimetableConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableConfig.swift; sourceTree = "<group>"; };
+		5DBE16E72FBEA600001F539B /* TimeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMapper.swift; sourceTree = "<group>"; };
+		5DBE16EA2FBEA600001F539B /* CardCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCornerRadius.swift; sourceTree = "<group>"; };
+		5DBE16EC2FBEA600001F539B /* ScheduleScreenFlat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreenFlat.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5DBE16C22FBD9956001F539B /* Frameworks */ = {
@@ -29,10 +76,112 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D59CD602FC0A29000CBF713 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5D59CD7A2FC0A82300CBF713 /* Buttons */,
+				5D59CD7F2FC0A8EF00CBF713 /* Cells */,
+				5D59CD642FC0A52000CBF713 /* Cards */,
+				5D59CD672FC0A57200CBF713 /* Sections */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5D59CD632FC0A4F200CBF713 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5D59CD612FC0A4DA00CBF713 /* ScheduleScreen.swift */,
+				5DBE16EC2FBEA600001F539B /* ScheduleScreenFlat.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		5D59CD642FC0A52000CBF713 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				5DBE16D92FBDDE94001F539B /* CourseCard.swift */,
+				5D59CD652FC0A54000CBF713 /* EventCard.swift */,
+				5D59CD7D2FC0A8E600CBF713 /* EmptySlotCard.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		5D59CD672FC0A57200CBF713 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				5DBE16DB2FBEA512001F539B /* TopHeader.swift */,
+				5D59CD682FC0A59800CBF713 /* WeekDateBar.swift */,
+				5D59CD6A2FC0A5A400CBF713 /* TimeAxis.swift */,
+				5D59CD842FC0A95300CBF713 /* BottomToggleBar.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		5D59CD6C2FC0A60B00CBF713 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				5D59CD772FC0A80100CBF713 /* Spacing */,
+				5D59CD742FC0A7EC00CBF713 /* Typography */,
+				5D59CD6F2FC0A74000CBF713 /* Colors */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		5D59CD6F2FC0A74000CBF713 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				5D59CD6D2FC0A66300CBF713 /* AppColors.swift */,
+				5D59CD702FC0A78A00CBF713 /* CourseCardColor.swift */,
+				5D59CD722FC0A79E00CBF713 /* EventCardColors.swift */,
+				5D59CD882FC0BBDA00CBF713 /* TextColors.swift */,
+				5DBE16EA2FBEA600001F539B /* CardCornerRadius.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		5D59CD742FC0A7EC00CBF713 /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				5D59CD752FC0A7F800CBF713 /* AppFonts.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		5D59CD772FC0A80100CBF713 /* Spacing */ = {
+			isa = PBXGroup;
+			children = (
+				5D59CD782FC0A80C00CBF713 /* AppSpacing.swift */,
+			);
+			path = Spacing;
+			sourceTree = "<group>";
+		};
+		5D59CD7A2FC0A82300CBF713 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				5D59CD7B2FC0A8D400CBF713 /* CircleIconButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		5D59CD7F2FC0A8EF00CBF713 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5D59CD802FC0A8FA00CBF713 /* DateCell.swift */,
+				5D59CD822FC0A92300CBF713 /* TimeAxisCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		5DBE16BC2FBD9956001F539B = {
 			isa = PBXGroup;
 			children = (
-				5DBE16C72FBD9956001F539B /* timetable */,
+				5D59CD572FC097DF00CBF713 /* Assets.xcassets */,
+				5D59CD5A2FC097DF00CBF713 /* timetableApp.swift */,
+				5D59CD6C2FC0A60B00CBF713 /* DesignSystem */,
+				5D59CD602FC0A29000CBF713 /* Components */,
+				5D59CD632FC0A4F200CBF713 /* Screens */,
+				5DBE16DD2FBEA600001F539B /* Models */,
+				5DBE16E82FBEA600001F539B /* Helpers */,
 				5DBE16C62FBD9956001F539B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +192,25 @@
 				5DBE16C52FBD9956001F539B /* timetable.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5DBE16DD2FBEA600001F539B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5DBE16DE2FBEA600001F539B /* Course.swift */,
+				5DBE16DF2FBEA600001F539B /* ScheduleEvent.swift */,
+				5DBE16E02FBEA600001F539B /* MockData.swift */,
+				5DBE16E52FBEA600001F539B /* TimetableConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5DBE16E82FBEA600001F539B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5DBE16E72FBEA600001F539B /* TimeMapper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +227,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				5DBE16C72FBD9956001F539B /* timetable */,
 			);
 			name = timetable;
 			packageProductDependencies = (
@@ -109,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D59CD5E2FC097DF00CBF713 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +285,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DBE16DA2FBDDE94001F539B /* CourseCard.swift in Sources */,
+				5D59CD832FC0A92300CBF713 /* TimeAxisCell.swift in Sources */,
+				5D59CD812FC0A8FA00CBF713 /* DateCell.swift in Sources */,
+				5D59CD7E2FC0A8E600CBF713 /* EmptySlotCard.swift in Sources */,
+				5D59CD792FC0A80C00CBF713 /* AppSpacing.swift in Sources */,
+				5D59CD6E2FC0A66300CBF713 /* AppColors.swift in Sources */,
+				5DBE16DC2FBEA512001F539B /* TopHeader.swift in Sources */,
+				5D59CD7C2FC0A8D400CBF713 /* CircleIconButton.swift in Sources */,
+				5D59CD622FC0A4DA00CBF713 /* ScheduleScreen.swift in Sources */,
+				5D59CD732FC0A79E00CBF713 /* EventCardColors.swift in Sources */,
+				5D59CD762FC0A7F800CBF713 /* AppFonts.swift in Sources */,
+				5D59CD692FC0A59800CBF713 /* WeekDateBar.swift in Sources */,
+				5D59CD892FC0BBDA00CBF713 /* TextColors.swift in Sources */,
+				5D59CD5D2FC097DF00CBF713 /* timetableApp.swift in Sources */,
+				5D59CD852FC0A95300CBF713 /* BottomToggleBar.swift in Sources */,
+				5D59CD712FC0A78A00CBF713 /* CourseCardColor.swift in Sources */,
+				5D59CD662FC0A54000CBF713 /* EventCard.swift in Sources */,
+				5D59CD6B2FC0A5A400CBF713 /* TimeAxis.swift in Sources */,
+				5DBE16E12FBEA600001F539B /* Course.swift in Sources */,
+				5DBE16E22FBEA600001F539B /* ScheduleEvent.swift in Sources */,
+				5DBE16E32FBEA600001F539B /* MockData.swift in Sources */,
+				5DBE16E42FBEA600001F539B /* TimetableConfig.swift in Sources */,
+				5DBE16E62FBEA600001F539B /* TimeMapper.swift in Sources */,
+				5DBE16E92FBEA600001F539B /* CardCornerRadius.swift in Sources */,
+				5DBE16EB2FBEA600001F539B /* ScheduleScreenFlat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,11 +444,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Timetable;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -266,12 +459,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ale.timetable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -284,11 +481,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Timetable;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,12 +496,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ale.timetable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
