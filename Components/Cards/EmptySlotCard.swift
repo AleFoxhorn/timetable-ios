@@ -1,34 +1,21 @@
 import SwiftUI
 
-/// 无课时段的占位卡片
 struct EmptySlotCard: View {
-    @Environment(\.cardCornerRadius) private var cardCornerRadius
-
     var body: some View {
-        RoundedRectangle(cornerRadius: cardCornerRadius)
+        RoundedRectangle(cornerRadius: 6)
             .fill(Color.white)
-            .overlay(
-                RoundedRectangle(cornerRadius: cardCornerRadius)
-                    .stroke(AppColors.borderSubtle, lineWidth: AppSpacing.borderUltraThin)
-            )
     }
 }
 
 #Preview {
-    let cardWidth = (AppSpacing.courseGridWidth - 6 * AppSpacing.columnSpacing) / 7
+    let w: CGFloat = (318 - 6 * 4) / 7
+    let h: CGFloat = 47
 
-    VStack(alignment: .leading, spacing: 20) {
-        EmptySlotCard()
-            .frame(width: cardWidth, height: AppSpacing.cellHeight)
-
-        HStack(spacing: AppSpacing.columnSpacing) {
-            EmptySlotCard()
-            EmptySlotCard()
-            EmptySlotCard()
+    HStack(alignment: .top, spacing: 4) {
+        ForEach(0..<4) { _ in
+            EmptySlotCard().frame(width: w, height: h)
         }
-        .frame(width: cardWidth * 3 + AppSpacing.columnSpacing * 2, height: AppSpacing.cellHeight, alignment: .leading)
     }
-    .frame(width: AppSpacing.courseGridWidth, alignment: .leading)
     .padding(24)
-    .background(Color.gray.opacity(0.08))
+    .background(Color.black)
 }

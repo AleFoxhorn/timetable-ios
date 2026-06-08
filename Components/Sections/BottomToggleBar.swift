@@ -21,40 +21,62 @@ struct BottomToggleBar: View {
 
     var body: some View {
         ZStack {
-            // Bar 作为独立 Button，保留原生按压动画；label 内不放任何可交互子视图
             Button(action: {
                 withAnimation(.easeInOut(duration: 0.3)) {
                     onToggle()
                 }
             }) {
-                RoundedRectangle(cornerRadius: AppSpacing.cardCornerRadius)
-                    .fill(mode == .events ? EventCardColors.eventTint : Color.white)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: AppSpacing.cardCornerRadius)
-                            .strokeBorder(
-                                EventCardColors.eventTint,
-                                lineWidth: mode == .courses ? AppSpacing.borderThin : 0
+                ZStack {
+                    if mode == .courses {
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(AppColors.eventOverlay35)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(AppColors.eventAccent, lineWidth: 1.4)
                             )
-                    )
-                    .overlay(
-                        Text(mode == .courses ? "切换至事项" : "切换至课程")
-                            .font(AppFonts.bodyMedium)
-                            .foregroundColor(
-                                mode == .courses ? EventCardColors.eventTint : TextColors.textOnHighlight
-                            )
-                    )
-            }
-            .frame(width: 334, height: 52)
 
-            // Plus 按钮在 ZStack 上层，hit-test 优先于 Button；
-            // Spacer 区域无交互，点击穿透给下方 Button
+                        Text("切换到事项")
+                            .font(.custom("MiSans-Medium", size: 18))
+                            .foregroundColor(AppColors.textOnDark)
+                    } else {
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(AppColors.eventAccent)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(AppColors.eventAccent, lineWidth: 1)
+                            )
+
+                        Text("切换到课程")
+                            .font(.custom("MiSans-Medium", size: 18))
+                            .foregroundColor(AppColors.textPrimary)
+                    }
+                }
+            }
+            .frame(width: 321, height: 55)
+            .buttonStyle(.plain)
+
             if mode == .events {
                 HStack {
                     Spacer()
-                    CircleIconButton(icon: "plus", action: onAdd)
-                        .padding(.trailing, AppSpacing.columnSpacing)
+                    Button(action: onAdd) {
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(AppColors.surfacePrimary)
+                            .frame(width: 31, height: 31)
+                            .overlay {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 2)
+                                        .fill(AppColors.textPrimary)
+                                        .frame(width: 2.714, height: 19)
+                                    RoundedRectangle(cornerRadius: 2)
+                                        .fill(AppColors.textPrimary)
+                                        .frame(width: 19, height: 2.714)
+                                }
+                            }
+                    }
+                    .buttonStyle(.plain)
+                        .padding(.trailing, 12)
                 }
-                .frame(width: 334)
+                .frame(width: 321)
             }
         }
     }

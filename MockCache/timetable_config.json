@@ -1,0 +1,36 @@
+{
+  "currentWeek": [
+    { "weekday": "MON", "day": 23, "isToday": false },
+    { "weekday": "TUE", "day": 24, "isToday": false },
+    { "weekday": "WED", "day": 25, "isToday": true },
+    { "weekday": "THU", "day": 26, "isToday": false },
+    { "weekday": "FRI", "day": 27, "isToday": false },
+    { "weekday": "SAT", "day": 28, "isToday": false },
+    { "weekday": "SUN", "day": 29, "isToday": false }
+  ],
+  "segments": [
+    { "startTime": "08:00", "endTime": "08:45", "visualHeight": 47, "kind": { "slot": 1 } },
+    { "startTime": "08:45", "endTime": "08:50", "visualHeight": 1, "kind": "denseGap" },
+    { "startTime": "08:50", "endTime": "09:35", "visualHeight": 47, "kind": { "slot": 2 } },
+    { "startTime": "09:35", "endTime": "10:05", "visualHeight": 1, "kind": "denseGap" },
+    { "startTime": "10:05", "endTime": "10:50", "visualHeight": 47, "kind": { "slot": 3 } },
+    { "startTime": "10:50", "endTime": "10:55", "visualHeight": 1, "kind": "denseGap" },
+    { "startTime": "10:55", "endTime": "11:40", "visualHeight": 47, "kind": { "slot": 4 } },
+    { "startTime": "11:40", "endTime": "13:30", "visualHeight": 15, "kind": "isolatedGap" },
+    { "startTime": "13:30", "endTime": "14:15", "visualHeight": 47, "kind": { "slot": 5 } },
+    { "startTime": "14:15", "endTime": "14:20", "visualHeight": 1, "kind": "denseGap" },
+    { "startTime": "14:20", "endTime": "15:05", "visualHeight": 47, "kind": { "slot": 6 } },
+    { "startTime": "15:05", "endTime": "15:35", "visualHeight": 1, "kind": "denseGap" },
+    { "startTime": "15:35", "endTime": "16:20", "visualHeight": 47, "kind": { "slot": 7 } },
+    { "startTime": "16:20", "endTime": "16:25", "visualHeight": 1, "kind": "denseGap" },
+    { "startTime": "16:25", "endTime": "17:10", "visualHeight": 47, "kind": { "slot": 8 } },
+    { "startTime": "17:10", "endTime": "18:00", "visualHeight": 15, "kind": "isolatedGap" },
+    { "startTime": "18:00", "endTime": "18:45", "visualHeight": 47, "kind": { "slot": 9 } },
+    { "startTime": "18:45", "endTime": "18:55", "visualHeight": 1, "kind": "denseGap" },
+    { "startTime": "18:55", "endTime": "19:40", "visualHeight": 47, "kind": { "slot": 10 } },
+    { "startTime": "19:40", "endTime": "19:50", "visualHeight": 1, "kind": "denseGap" },
+    { "startTime": "19:50", "endTime": "20:35", "visualHeight": 47, "kind": { "slot": 11 } },
+    { "startTime": "20:35", "endTime": "20:45", "visualHeight": 1, "kind": "denseGap" },
+    { "startTime": "20:45", "endTime": "21:30", "visualHeight": 47, "kind": { "slot": 12 } }
+  ]
+}

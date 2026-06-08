@@ -25,6 +25,10 @@ enum AppFonts {
     /// 暂定值（来源：CourseCard 课程名）
     /// 用途：课程卡片主标题
     static let courseCardTitle = Font.system(size: 14, weight: .bold)
+
+    /// 来源：`selectweektitle`
+    /// 用途：学周左侧标签（`…` / `本周` / 周编号）
+    static let semesterWeekLabel = Font.custom("MiSans-Regular", size: 14)
     
     
     // MARK: - Body（正文）
@@ -32,6 +36,18 @@ enum AppFonts {
     /// 暂定值（来源：WeekDateBar 月份标签）
     /// 用途：周日期条左侧月份文字
     static let bodyMedium = Font.system(size: 16, weight: .medium)
+
+    /// 来源：`selectweekrow`
+    /// 用途：学期选择 / 学期预览中的日期数字
+    static let semesterWeekDate = Font.custom("Apple Braille", size: 16)
+
+    /// 来源：`tasklistcell` / `CourseTaskPopover`
+    /// 用途：课内任务列表与编辑态文本
+    static let taskBody = Font.custom("MiSans-Regular", size: 15)
+
+    /// 来源：`weekrow1`
+    /// 用途：学期选择 / 学期预览顶部星期标题
+    static let semesterWeekHeader = Font.system(size: 16, weight: .bold)
     
     
     // MARK: - Title（标题）
@@ -39,5 +55,9 @@ enum AppFonts {
     /// 暂定值（来源：TopHeader 周数标题）
     /// 用途：界面主标题（如 TopHeader 周数标题）
     static let titleLarge = Font.system(size: 32, weight: .regular)
+
+    /// 来源：`TopHeader`（`buildnewsheet` / `preview` / `choosethefirstweek`）
+    /// 用途：TIMETABLE 流程主标题
+    static let semesterHeaderTitle = Font.custom("MiSans-Medium", size: 26)
     
 }

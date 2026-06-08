@@ -14,8 +14,6 @@
 		5D59CD692FC0A59800CBF713 /* WeekDateBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD682FC0A59800CBF713 /* WeekDateBar.swift */; };
 		5D59CD6B2FC0A5A400CBF713 /* TimeAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD6A2FC0A5A400CBF713 /* TimeAxis.swift */; };
 		5D59CD6E2FC0A66300CBF713 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD6D2FC0A66300CBF713 /* AppColors.swift */; };
-		5D59CD712FC0A78A00CBF713 /* CourseCardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD702FC0A78A00CBF713 /* CourseCardColor.swift */; };
-		5D59CD732FC0A79E00CBF713 /* EventCardColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD722FC0A79E00CBF713 /* EventCardColors.swift */; };
 		5D59CD762FC0A7F800CBF713 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD752FC0A7F800CBF713 /* AppFonts.swift */; };
 		5D59CD792FC0A80C00CBF713 /* AppSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD782FC0A80C00CBF713 /* AppSpacing.swift */; };
 		5D59CD7C2FC0A8D400CBF713 /* CircleIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD7B2FC0A8D400CBF713 /* CircleIconButton.swift */; };
@@ -23,7 +21,8 @@
 		5D59CD812FC0A8FA00CBF713 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD802FC0A8FA00CBF713 /* DateCell.swift */; };
 		5D59CD832FC0A92300CBF713 /* TimeAxisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD822FC0A92300CBF713 /* TimeAxisCell.swift */; };
 		5D59CD852FC0A95300CBF713 /* BottomToggleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD842FC0A95300CBF713 /* BottomToggleBar.swift */; };
-		5D59CD892FC0BBDA00CBF713 /* TextColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59CD882FC0BBDA00CBF713 /* TextColors.swift */; };
+		5DA2BA622FD102E900989582 /* MiSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DA2BA612FD102E900989582 /* MiSans-Medium.ttf */; };
+		5DA2BA642FD1030700989582 /* MiSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DA2BA632FD1030700989582 /* MiSans-Regular.ttf */; };
 		5DBE16DA2FBDDE94001F539B /* CourseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16D92FBDDE94001F539B /* CourseCard.swift */; };
 		5DBE16DC2FBEA512001F539B /* TopHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16DB2FBEA512001F539B /* TopHeader.swift */; };
 		5DBE16E12FBEA600001F539B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16DE2FBEA600001F539B /* Course.swift */; };
@@ -33,6 +32,37 @@
 		5DBE16E62FBEA600001F539B /* TimeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16E72FBEA600001F539B /* TimeMapper.swift */; };
 		5DBE16E92FBEA600001F539B /* CardCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16EA2FBEA600001F539B /* CardCornerRadius.swift */; };
 		5DBE16EB2FBEA600001F539B /* ScheduleScreenFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE16EC2FBEA600001F539B /* ScheduleScreenFlat.swift */; };
+		AC1001022FC0A4DA00CBF713 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1001012FC0A4DA00CBF713 /* MainScreen.swift */; };
+		AC1002022FC0A4DA00CBF713 /* TaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1002012FC0A4DA00CBF713 /* TaskScreen.swift */; };
+		AC1003022FC0A4DA00CBF713 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1003012FC0A4DA00CBF713 /* ScheduleViewModel.swift */; };
+		AC1004022FC0A4DA00CBF713 /* NewScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1004012FC0A4DA00CBF713 /* NewScheduleRow.swift */; };
+		AC2001022FD9000000AC0001 /* CreateANewCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2001012FD9000000AC0001 /* CreateANewCourseView.swift */; };
+		AC2002022FD9000000AC0002 /* CourseDetailsPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2002012FD9000000AC0002 /* CourseDetailsPopover.swift */; };
+		AC3001022FD9000000AC0003 /* CreateANewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3001012FD9000000AC0003 /* CreateANewEventView.swift */; };
+		AC3002022FD9000000AC0004 /* EditEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3002012FD9000000AC0004 /* EditEventView.swift */; };
+		AC3003022FD9000000AC0005 /* EventDetailsPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3003012FD9000000AC0005 /* EventDetailsPopover.swift */; };
+		CC0001022FD9000000CC0001 /* CycleSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0001012FD9000000CC0001 /* CycleSelection.swift */; };
+		CC0002022FD9000000CC0002 /* DateSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0002012FD9000000CC0002 /* DateSelection.swift */; };
+		CC0003022FD9000000CC0003 /* EventDateSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0003012FD9000000CC0003 /* EventDateSelection.swift */; };
+		CC0004022FD9000000CC0004 /* EventCycleTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0004012FD9000000CC0004 /* EventCycleTypeButton.swift */; };
+		DD0001022FD9000000DD0001 /* CycleSelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0001012FD9000000DD0001 /* CycleSelectionSection.swift */; };
+		DD0002022FD9000000DD0002 /* DateSelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0002012FD9000000DD0002 /* DateSelectionSection.swift */; };
+		DD0003022FD9000000DD0003 /* CourseSessionSelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0003012FD9000000DD0003 /* CourseSessionSelectionSection.swift */; };
+		DD0004022FD9000000DD0004 /* EventSelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0004012FD9000000DD0004 /* EventSelectionSection.swift */; };
+		EE0001022FD9000000EE0001 /* SelectWeekTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0001012FD9000000EE0001 /* SelectWeekTitle.swift */; };
+		EE0002022FD9000000EE0002 /* SelectWeekRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0002012FD9000000EE0002 /* SelectWeekRow.swift */; };
+		EF0001022FE0000000EF0001 /* EditCourseBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0001012FE0000000EF0001 /* EditCourseBoardCell.swift */; };
+		EF0002022FE0000000EF0002 /* EditCourseSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0002012FE0000000EF0002 /* EditCourseSelectCell.swift */; };
+		EF0003022FE0000000EF0003 /* EditCourseSelectButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0003012FE0000000EF0003 /* EditCourseSelectButtonCell.swift */; };
+		F20000112FF1000000F20001 /* CourseCardInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000102FF1000000F20001 /* CourseCardInstance.swift */; };
+		F20000212FF1000000F20002 /* CourseTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000202FF1000000F20002 /* CourseTask.swift */; };
+		F20000312FF1000000F20003 /* TaskButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000302FF1000000F20003 /* TaskButtonPlus.swift */; };
+		F20000412FF1000000F20004 /* TaskButtonReduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000402FF1000000F20004 /* TaskButtonReduction.swift */; };
+		F20000512FF1000000F20005 /* EditTaskBlankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000502FF1000000F20005 /* EditTaskBlankCell.swift */; };
+		F20000612FF1000000F20006 /* EditTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000602FF1000000F20006 /* EditTaskCell.swift */; };
+		F20000712FF1000000F20007 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000702FF1000000F20007 /* TaskListCell.swift */; };
+		F20000812FF1000000F20008 /* CourseTaskPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000802FF1000000F20008 /* CourseTaskPopover.swift */; };
+		F20000912FF1000000F20009 /* ScheduleView+TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000902FF1000000F20009 /* ScheduleView+TaskList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +73,6 @@
 		5D59CD682FC0A59800CBF713 /* WeekDateBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDateBar.swift; sourceTree = "<group>"; };
 		5D59CD6A2FC0A5A400CBF713 /* TimeAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAxis.swift; sourceTree = "<group>"; };
 		5D59CD6D2FC0A66300CBF713 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
-		5D59CD702FC0A78A00CBF713 /* CourseCardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCardColor.swift; sourceTree = "<group>"; };
-		5D59CD722FC0A79E00CBF713 /* EventCardColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardColors.swift; sourceTree = "<group>"; };
 		5D59CD752FC0A7F800CBF713 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		5D59CD782FC0A80C00CBF713 /* AppSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpacing.swift; sourceTree = "<group>"; };
 		5D59CD7B2FC0A8D400CBF713 /* CircleIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIconButton.swift; sourceTree = "<group>"; };
@@ -52,7 +80,8 @@
 		5D59CD802FC0A8FA00CBF713 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		5D59CD822FC0A92300CBF713 /* TimeAxisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAxisCell.swift; sourceTree = "<group>"; };
 		5D59CD842FC0A95300CBF713 /* BottomToggleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToggleBar.swift; sourceTree = "<group>"; };
-		5D59CD882FC0BBDA00CBF713 /* TextColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColors.swift; sourceTree = "<group>"; };
+		5DA2BA612FD102E900989582 /* MiSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MiSans-Medium.ttf"; sourceTree = "<group>"; };
+		5DA2BA632FD1030700989582 /* MiSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MiSans-Regular.ttf"; sourceTree = "<group>"; };
 		5DBE16C52FBD9956001F539B /* timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timetable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBE16D92FBDDE94001F539B /* CourseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCard.swift; sourceTree = "<group>"; };
 		5DBE16DB2FBEA512001F539B /* TopHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeader.swift; sourceTree = "<group>"; };
@@ -63,6 +92,40 @@
 		5DBE16E72FBEA600001F539B /* TimeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMapper.swift; sourceTree = "<group>"; };
 		5DBE16EA2FBEA600001F539B /* CardCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCornerRadius.swift; sourceTree = "<group>"; };
 		5DBE16EC2FBEA600001F539B /* ScheduleScreenFlat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreenFlat.swift; sourceTree = "<group>"; };
+		AC1001012FC0A4DA00CBF713 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		AC1002012FC0A4DA00CBF713 /* TaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScreen.swift; sourceTree = "<group>"; };
+		AC1003012FC0A4DA00CBF713 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		AC1004012FC0A4DA00CBF713 /* NewScheduleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScheduleRow.swift; sourceTree = "<group>"; };
+		AC2001012FD9000000AC0001 /* CreateANewCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateANewCourseView.swift; sourceTree = "<group>"; };
+		AC2002012FD9000000AC0002 /* CourseDetailsPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsPopover.swift; sourceTree = "<group>"; };
+		AC3001012FD9000000AC0003 /* CreateANewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateANewEventView.swift; sourceTree = "<group>"; };
+		AC3002012FD9000000AC0004 /* EditEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventView.swift; sourceTree = "<group>"; };
+		AC3003012FD9000000AC0005 /* EventDetailsPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsPopover.swift; sourceTree = "<group>"; };
+		CC0001012FD9000000CC0001 /* CycleSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelection.swift; sourceTree = "<group>"; };
+		CC0002012FD9000000CC0002 /* DateSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelection.swift; sourceTree = "<group>"; };
+		CC0003012FD9000000CC0003 /* EventDateSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDateSelection.swift; sourceTree = "<group>"; };
+		CC0004012FD9000000CC0004 /* EventCycleTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCycleTypeButton.swift; sourceTree = "<group>"; };
+		DD0001012FD9000000DD0001 /* CycleSelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionSection.swift; sourceTree = "<group>"; };
+		DD0002012FD9000000DD0002 /* DateSelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionSection.swift; sourceTree = "<group>"; };
+		DD0003012FD9000000DD0003 /* CourseSessionSelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSessionSelectionSection.swift; sourceTree = "<group>"; };
+		DD0004012FD9000000DD0004 /* EventSelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSelectionSection.swift; sourceTree = "<group>"; };
+		EE0001012FD9000000EE0001 /* SelectWeekTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekTitle.swift; sourceTree = "<group>"; };
+		EE0002012FD9000000EE0002 /* SelectWeekRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekRow.swift; sourceTree = "<group>"; };
+		EF0001012FE0000000EF0001 /* EditCourseBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourseBoardCell.swift; sourceTree = "<group>"; };
+		EF0002012FE0000000EF0002 /* EditCourseSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourseSelectCell.swift; sourceTree = "<group>"; };
+		EF0003012FE0000000EF0003 /* EditCourseSelectButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourseSelectButtonCell.swift; sourceTree = "<group>"; };
+		F10000022FE1000000F10002 /* courses_and_tasks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = courses_and_tasks.json; sourceTree = "<group>"; };
+		F10000032FE1000000F10003 /* events.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		F10000042FE1000000F10004 /* timetable_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = timetable_config.json; sourceTree = "<group>"; };
+		F20000102FF1000000F20001 /* CourseCardInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCardInstance.swift; sourceTree = "<group>"; };
+		F20000202FF1000000F20002 /* CourseTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTask.swift; sourceTree = "<group>"; };
+		F20000302FF1000000F20003 /* TaskButtonPlus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskButtonPlus.swift; sourceTree = "<group>"; };
+		F20000402FF1000000F20004 /* TaskButtonReduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskButtonReduction.swift; sourceTree = "<group>"; };
+		F20000502FF1000000F20005 /* EditTaskBlankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskBlankCell.swift; sourceTree = "<group>"; };
+		F20000602FF1000000F20006 /* EditTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskCell.swift; sourceTree = "<group>"; };
+		F20000702FF1000000F20007 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
+		F20000802FF1000000F20008 /* CourseTaskPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTaskPopover.swift; sourceTree = "<group>"; };
+		F20000902FF1000000F20009 /* ScheduleView+TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleView+TaskList.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +146,29 @@
 				5D59CD7F2FC0A8EF00CBF713 /* Cells */,
 				5D59CD642FC0A52000CBF713 /* Cards */,
 				5D59CD672FC0A57200CBF713 /* Sections */,
+				AC1005012FC0A4DA00CBF713 /* Forms */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		AC1005012FC0A4DA00CBF713 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				AC1004012FC0A4DA00CBF713 /* NewScheduleRow.swift */,
+			);
+			path = Forms;
 			sourceTree = "<group>";
 		};
 		5D59CD632FC0A4F200CBF713 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AC1001012FC0A4DA00CBF713 /* MainScreen.swift */,
+				AC2001012FD9000000AC0001 /* CreateANewCourseView.swift */,
+				AC3001012FD9000000AC0003 /* CreateANewEventView.swift */,
+				AC3002012FD9000000AC0004 /* EditEventView.swift */,
+				AC1002012FC0A4DA00CBF713 /* TaskScreen.swift */,
 				5D59CD612FC0A4DA00CBF713 /* ScheduleScreen.swift */,
+				F20000902FF1000000F20009 /* ScheduleView+TaskList.swift */,
 				5DBE16EC2FBEA600001F539B /* ScheduleScreenFlat.swift */,
 			);
 			path = Screens;
@@ -102,6 +180,10 @@
 				5DBE16D92FBDDE94001F539B /* CourseCard.swift */,
 				5D59CD652FC0A54000CBF713 /* EventCard.swift */,
 				5D59CD7D2FC0A8E600CBF713 /* EmptySlotCard.swift */,
+				CC0001012FD9000000CC0001 /* CycleSelection.swift */,
+				CC0002012FD9000000CC0002 /* DateSelection.swift */,
+				CC0003012FD9000000CC0003 /* EventDateSelection.swift */,
+				CC0004012FD9000000CC0004 /* EventCycleTypeButton.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -113,6 +195,13 @@
 				5D59CD682FC0A59800CBF713 /* WeekDateBar.swift */,
 				5D59CD6A2FC0A5A400CBF713 /* TimeAxis.swift */,
 				5D59CD842FC0A95300CBF713 /* BottomToggleBar.swift */,
+				AC2002012FD9000000AC0002 /* CourseDetailsPopover.swift */,
+				AC3003012FD9000000AC0005 /* EventDetailsPopover.swift */,
+				F20000802FF1000000F20008 /* CourseTaskPopover.swift */,
+				DD0001012FD9000000DD0001 /* CycleSelectionSection.swift */,
+				DD0002012FD9000000DD0002 /* DateSelectionSection.swift */,
+				DD0003012FD9000000DD0003 /* CourseSessionSelectionSection.swift */,
+				DD0004012FD9000000DD0004 /* EventSelectionSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -131,9 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				5D59CD6D2FC0A66300CBF713 /* AppColors.swift */,
-				5D59CD702FC0A78A00CBF713 /* CourseCardColor.swift */,
-				5D59CD722FC0A79E00CBF713 /* EventCardColors.swift */,
-				5D59CD882FC0BBDA00CBF713 /* TextColors.swift */,
 				5DBE16EA2FBEA600001F539B /* CardCornerRadius.swift */,
 			);
 			path = Colors;
@@ -143,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				5D59CD752FC0A7F800CBF713 /* AppFonts.swift */,
+				5DA2BA612FD102E900989582 /* MiSans-Medium.ttf */,
+				5DA2BA632FD1030700989582 /* MiSans-Regular.ttf */,
 			);
 			path = Typography;
 			sourceTree = "<group>";
@@ -159,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				5D59CD7B2FC0A8D400CBF713 /* CircleIconButton.swift */,
+				F20000302FF1000000F20003 /* TaskButtonPlus.swift */,
+				F20000402FF1000000F20004 /* TaskButtonReduction.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -168,6 +258,14 @@
 			children = (
 				5D59CD802FC0A8FA00CBF713 /* DateCell.swift */,
 				5D59CD822FC0A92300CBF713 /* TimeAxisCell.swift */,
+				EE0001012FD9000000EE0001 /* SelectWeekTitle.swift */,
+				EE0002012FD9000000EE0002 /* SelectWeekRow.swift */,
+				EF0001012FE0000000EF0001 /* EditCourseBoardCell.swift */,
+				EF0002012FE0000000EF0002 /* EditCourseSelectCell.swift */,
+				EF0003012FE0000000EF0003 /* EditCourseSelectButtonCell.swift */,
+				F20000502FF1000000F20005 /* EditTaskBlankCell.swift */,
+				F20000602FF1000000F20006 /* EditTaskCell.swift */,
+				F20000702FF1000000F20007 /* TaskListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -181,6 +279,7 @@
 				5D59CD602FC0A29000CBF713 /* Components */,
 				5D59CD632FC0A4F200CBF713 /* Screens */,
 				5DBE16DD2FBEA600001F539B /* Models */,
+				F10000052FE1000000F10005 /* MockCache */,
 				5DBE16E82FBEA600001F539B /* Helpers */,
 				5DBE16C62FBD9956001F539B /* Products */,
 			);
@@ -198,11 +297,24 @@
 			isa = PBXGroup;
 			children = (
 				5DBE16DE2FBEA600001F539B /* Course.swift */,
+				F20000102FF1000000F20001 /* CourseCardInstance.swift */,
+				F20000202FF1000000F20002 /* CourseTask.swift */,
+				AC1003012FC0A4DA00CBF713 /* ScheduleViewModel.swift */,
 				5DBE16DF2FBEA600001F539B /* ScheduleEvent.swift */,
 				5DBE16E02FBEA600001F539B /* MockData.swift */,
 				5DBE16E52FBEA600001F539B /* TimetableConfig.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F10000052FE1000000F10005 /* MockCache */ = {
+			isa = PBXGroup;
+			children = (
+				F10000022FE1000000F10002 /* courses_and_tasks.json */,
+				F10000032FE1000000F10003 /* events.json */,
+				F10000042FE1000000F10004 /* timetable_config.json */,
+			);
+			path = MockCache;
 			sourceTree = "<group>";
 		};
 		5DBE16E82FBEA600001F539B /* Helpers */ = {
@@ -274,7 +386,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA2BA622FD102E900989582 /* MiSans-Medium.ttf in Resources */,
 				5D59CD5E2FC097DF00CBF713 /* Assets.xcassets in Resources */,
+				5DA2BA642FD1030700989582 /* MiSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,13 +408,10 @@
 				5DBE16DC2FBEA512001F539B /* TopHeader.swift in Sources */,
 				5D59CD7C2FC0A8D400CBF713 /* CircleIconButton.swift in Sources */,
 				5D59CD622FC0A4DA00CBF713 /* ScheduleScreen.swift in Sources */,
-				5D59CD732FC0A79E00CBF713 /* EventCardColors.swift in Sources */,
 				5D59CD762FC0A7F800CBF713 /* AppFonts.swift in Sources */,
 				5D59CD692FC0A59800CBF713 /* WeekDateBar.swift in Sources */,
-				5D59CD892FC0BBDA00CBF713 /* TextColors.swift in Sources */,
 				5D59CD5D2FC097DF00CBF713 /* timetableApp.swift in Sources */,
 				5D59CD852FC0A95300CBF713 /* BottomToggleBar.swift in Sources */,
-				5D59CD712FC0A78A00CBF713 /* CourseCardColor.swift in Sources */,
 				5D59CD662FC0A54000CBF713 /* EventCard.swift in Sources */,
 				5D59CD6B2FC0A5A400CBF713 /* TimeAxis.swift in Sources */,
 				5DBE16E12FBEA600001F539B /* Course.swift in Sources */,
@@ -310,6 +421,37 @@
 				5DBE16E62FBEA600001F539B /* TimeMapper.swift in Sources */,
 				5DBE16E92FBEA600001F539B /* CardCornerRadius.swift in Sources */,
 				5DBE16EB2FBEA600001F539B /* ScheduleScreenFlat.swift in Sources */,
+				AC1001022FC0A4DA00CBF713 /* MainScreen.swift in Sources */,
+				AC1002022FC0A4DA00CBF713 /* TaskScreen.swift in Sources */,
+				AC1003022FC0A4DA00CBF713 /* ScheduleViewModel.swift in Sources */,
+				AC1004022FC0A4DA00CBF713 /* NewScheduleRow.swift in Sources */,
+				F20000112FF1000000F20001 /* CourseCardInstance.swift in Sources */,
+				F20000212FF1000000F20002 /* CourseTask.swift in Sources */,
+				AC2001022FD9000000AC0001 /* CreateANewCourseView.swift in Sources */,
+				AC2002022FD9000000AC0002 /* CourseDetailsPopover.swift in Sources */,
+				F20000912FF1000000F20009 /* ScheduleView+TaskList.swift in Sources */,
+				AC3001022FD9000000AC0003 /* CreateANewEventView.swift in Sources */,
+				AC3002022FD9000000AC0004 /* EditEventView.swift in Sources */,
+				AC3003022FD9000000AC0005 /* EventDetailsPopover.swift in Sources */,
+				CC0001022FD9000000CC0001 /* CycleSelection.swift in Sources */,
+				CC0002022FD9000000CC0002 /* DateSelection.swift in Sources */,
+				CC0003022FD9000000CC0003 /* EventDateSelection.swift in Sources */,
+				CC0004022FD9000000CC0004 /* EventCycleTypeButton.swift in Sources */,
+				DD0001022FD9000000DD0001 /* CycleSelectionSection.swift in Sources */,
+				DD0002022FD9000000DD0002 /* DateSelectionSection.swift in Sources */,
+				DD0003022FD9000000DD0003 /* CourseSessionSelectionSection.swift in Sources */,
+				DD0004022FD9000000DD0004 /* EventSelectionSection.swift in Sources */,
+				EE0001022FD9000000EE0001 /* SelectWeekTitle.swift in Sources */,
+				EE0002022FD9000000EE0002 /* SelectWeekRow.swift in Sources */,
+				EF0001022FE0000000EF0001 /* EditCourseBoardCell.swift in Sources */,
+				EF0002022FE0000000EF0002 /* EditCourseSelectCell.swift in Sources */,
+				EF0003022FE0000000EF0003 /* EditCourseSelectButtonCell.swift in Sources */,
+				F20000312FF1000000F20003 /* TaskButtonPlus.swift in Sources */,
+				F20000412FF1000000F20004 /* TaskButtonReduction.swift in Sources */,
+				F20000512FF1000000F20005 /* EditTaskBlankCell.swift in Sources */,
+				F20000612FF1000000F20006 /* EditTaskCell.swift in Sources */,
+				F20000712FF1000000F20007 /* TaskListCell.swift in Sources */,
+				F20000812FF1000000F20008 /* CourseTaskPopover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

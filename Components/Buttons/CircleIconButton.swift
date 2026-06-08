@@ -1,75 +1,77 @@
 import SwiftUI
 
-// 默认背景为 .ultraThinMaterial（iOS 原生毛玻璃材质）
-// 毛玻璃效果在彩色背景上最显著，在纯白背景上视觉较淡（这是材质特性，非 bug）
-// 如需自定义背景（纯色、其他材质等），通过 background: AnyShapeStyle(...) 传入
 struct CircleIconButton: View {
-    /// SF Symbol 图标名称
-    let icon: String
 
-    /// 点击按钮时执行的回调
+    enum Style {
+        /// 白圆 + 返回箭头（用于返回/关闭弹层）
+        case goBack
+        /// 白圆 + 确认勾（用于提交/确认）
+        case confirm
+        /// 浅灰圆 + ✕（用于取消/退出编辑）
+        case quit
+        /// 自定义图标：新建课表（书+加号徽章）
+        case createCalendar
+        /// 自定义图标：新建课程（方块+加号）
+        case createSchedule
+    }
+
+    let style: Style
     let action: () -> Void
 
-    /// 按钮直径，默认 44
-    var size: CGFloat = 44
-
-    /// 图标颜色，默认使用主色
-    var iconColor: Color = .primary
-
-    /// 圆形背景填充，默认毛玻璃材质；如需自定义传入 AnyShapeStyle(...)
-    var background: AnyShapeStyle = AnyShapeStyle(.ultraThinMaterial)
-
     var body: some View {
-        Button(action: action) {
-            Image(systemName: icon)
-                .font(.system(size: size * 0.4, weight: .medium))
-                .foregroundColor(iconColor)
-                .frame(width: size, height: size)
-                .background(background, in: Circle())
-                .overlay(
-                    Circle().strokeBorder(
-                        LinearGradient(
-                            colors: [.white.opacity(0.6), .white.opacity(0.1)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        ),
-                        lineWidth: AppSpacing.borderThin
-                    )
-                )
+        Button(action: action) { label }
+    }
+
+    @ViewBuilder
+    private var label: some View {
+        switch style {
+        case .goBack:
+            Image(systemName: "chevron.left")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(AppColors.textPrimary)
+                .frame(width: 27, height: 27)
+                .background(AppColors.textOnDark)
+                .clipShape(Circle())
+
+        case .confirm:
+            Image(systemName: "checkmark")
+                .font(.system(size: 13, weight: .medium))
+                .foregroundColor(AppColors.textPrimary)
+                .frame(width: 27, height: 27)
+                .background(AppColors.textOnDark)
+                .clipShape(Circle())
+
+        case .quit:
+            Image(systemName: "xmark")
+                .font(.system(size: 13, weight: .medium))
+                .foregroundColor(AppColors.textPrimary)
+                .frame(width: 27, height: 27)
+                .background(AppColors.buttonFillClose)
+                .clipShape(Circle())
+
+        case .createCalendar:
+            Image("creatnewcalendarbutton")
+                .resizable()
+                .renderingMode(.original)
+                .frame(width: 27, height: 33)
+
+        case .createSchedule:
+            Image("addnewschadulebutton")
+                .resizable()
+                .renderingMode(.original)
+                .frame(width: 27, height: 27)
         }
     }
 }
 
 #Preview {
-    VStack(spacing: 16) {
-        CircleIconButton(
-            icon: "plus",
-            action: { print("tapped") }
-        )
-
-        CircleIconButton(
-            icon: "doc.badge.plus",
-            action: { print("tapped") }
-        )
-
-        CircleIconButton(
-            icon: "plus",
-            action: { print("tapped") },
-            iconColor: .purple
-        )
-
-        CircleIconButton(
-            icon: "heart.fill",
-            action: { print("tapped") },
-            background: AnyShapeStyle(Color.white.opacity(0.4))
-        )
+    HStack(spacing: 16) {
+        CircleIconButton(style: .goBack,          action: {})
+        CircleIconButton(style: .confirm,         action: {})
+        CircleIconButton(style: .quit,            action: {})
+        CircleIconButton(style: .createCalendar,  action: {})
+        CircleIconButton(style: .createSchedule,  action: {})
     }
     .padding(32)
-    .background(
-        LinearGradient(
-            colors: [.purple, .indigo, .blue],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-    )
+    .background(Color.black)
 }

@@ -2,84 +2,70 @@ import SwiftUI
 
 enum AppSpacing {
 
-    // MARK: - 边框粗细
+    // MARK: - TIMETABLE / Semester Flow
 
-    /// 暂定值
-    /// 用途：卡片细描边粗细
-    static let borderThin: CGFloat = 1
+    /// `selectweekrowsection` 行间距
+    static let semesterWeekRowGap: CGFloat = 2
 
-    /// 暂定值
-    /// 用途：格子淡描边（TimeAxisCell、EmptySlotCard）
-    static let borderUltraThin: CGFloat = 0.5
+    /// `weekrow1` 星期标题列间距
+    static let semesterWeekHeaderGap: CGFloat = 5
 
-    // MARK: - 纵向排列间距
+    /// `selectweektitle` 水平内边距
+    static let semesterWeekTitleHorizontalPadding: CGFloat = 4
 
-    /// 密集间距，用于同组卡片紧密堆叠
-    static let rowSpacingDense: CGFloat = 4
+    /// `selectweektitle` 顶部内边距
+    static let semesterWeekTitleTopPadding: CGFloat = 7
 
-    /// 隔离间距，用于不同区块之间的视觉分隔
-    static let rowSpacingIsolated: CGFloat = 36
+    /// `selectweektitle` 底部内边距
+    static let semesterWeekTitleBottomPadding: CGFloat = 6
 
-    // MARK: - 卡片圆角
+    /// `selectweekrow` 水平内边距
+    static let semesterWeekRowHorizontalPadding: CGFloat = 15
 
-    /// 所有卡片和格子的统一圆角半径
-    static let cardCornerRadius: CGFloat = 10
+    /// `Selectatimeperiod` / `SemesterPreview` 顶部主内容起始间距
+    static let semesterScreenTopPadding: CGFloat = 21
 
-    // MARK: - 时间轴宽度
+    /// `TopHeader` 标题区通用水平内边距
+    static let topHeaderHorizontalPadding: CGFloat = 15
 
-    /// 时间轴列（TimeAxisCell / TimeAxis）的固定宽度
-    static let timeAxisWidth: CGFloat = 34
+    // MARK: - TASKS / CourseTaskPopover
 
-    // MARK: - 屏幕水平边距
+    /// `CourseTaskPopover` 外层宽度
+    static let taskPopoverOuterWidth: CGFloat = 238
 
-    /// 界面内容距屏幕左右边缘的间距（如 TopHeader 按钮边距）
-    static let screenPaddingHorizontal: CGFloat = 20
+    /// `CourseTaskPopover` 内层宽度
+    static let taskPopoverInnerWidth: CGFloat = 222
 
-    // MARK: - 单元高度
+    /// `tasklistcell` 常规任务行高度
+    static let taskRowHeight: CGFloat = 46
 
-    /// 单节课程格的标准高度，CourseCard / EmptySlotCard / TimeAxisCell / EventCard 共用
-    static let cellHeight: CGFloat = 46
+    /// `tasklistcell` 文本宽度
+    static let taskTextWidth: CGFloat = 192
 
-    // MARK: - 卡片内部元素间距
+    /// `edittaskblank` 新增入口行高度
+    static let taskAddRowHeight: CGFloat = 46
 
-    /// 卡片内相邻文字元素之间的正常间距（如时间标签与内容文字之间）
-    static let cardInnerSpacing: CGFloat = 2
+    /// `edittaskblank` 空白行宽度
+    static let taskAddRowWidth: CGFloat = 220
 
-    // MARK: - 卡片文字行距
+    /// 任务文本左内边距
+    static let taskTextLeading: CGFloat = 17
 
-    /// 课程名 / 事项内容文字（14–16pt）与省略号之间的行间距（负值使文字紧凑叠放）
-    static let cardTitleLineSpacing: CGFloat = -8
+    /// 新增按钮左侧偏移
+    static let taskAddButtonLeading: CGFloat = 10
 
-    /// 卡片副文字（caption 11pt）与省略号之间的行间距
-    static let cardCaptionLineSpacing: CGFloat = -3
+    /// 删除按钮左侧偏移
+    static let taskDeleteButtonLeading: CGFloat = 187
 
-    // MARK: - 卡片内边距
+    /// 任务增减按钮尺寸
+    static let taskActionButtonSize: CGFloat = 27
 
-    /// 暂定值（来源：CourseCard 原始数值）
-    /// 用途：卡片上下边缘内边距
-    static let cardPaddingVertical: CGFloat = 4
+    /// 任务浮层内层顶部偏移
+    static let taskPopoverInnerTop: CGFloat = 10
 
-    /// 暂定值（来源：CourseCard 原始数值）
-    /// 用途：卡片左右边缘内边距
-    static let cardPaddingHorizontal: CGFloat = 4
+    /// 任务浮层内层左侧偏移
+    static let taskPopoverInnerLeading: CGFloat = 8
 
-    // MARK: - 横向卡片网格
-
-    /// 课程区域总宽度，7 列等分
-    static let courseGridWidth: CGFloat = 318
-
-    /// 7 列网格中所有横向元素（DateCell、CourseCard 等）之间的列间距
-    static let columnSpacing: CGFloat = 4
-
-    // MARK: - 卡片装饰元素
-
-    /// 任务指示点直径
-    static let taskDotSize: CGFloat = 8
-
-    // MARK: - 文字布局
-
-    /// 暂定值
-    /// 用途：卡片内任务文字每行最多字符数
-    static let taskCharsPerLine: Int = 3
-
+    /// 任务行之间的描边重叠量
+    static let taskRowOverlap: CGFloat = -1
 }

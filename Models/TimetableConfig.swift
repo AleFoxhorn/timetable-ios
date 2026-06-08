@@ -1,7 +1,17 @@
 import Foundation
 import CoreGraphics
 
-struct TimetableConfig {
+struct TimetableConfig: Codable, Equatable {
+    var id: UUID
+    var semesterStartMonday: Date
+
+    init(id: UUID = UUID(), semesterStartMonday: Date) {
+        self.id = id
+        self.semesterStartMonday = semesterStartMonday
+    }
+}
+
+struct TimetableLayoutConfig {
 
     struct Segment {
         let startTime: String

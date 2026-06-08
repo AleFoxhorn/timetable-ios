@@ -19,7 +19,7 @@ enum TimeMapper {
     }
 
     /// 计算时间表的总视觉高度（所有 segment.visualHeight 之和）
-    static func totalHeight(config: TimetableConfig) -> CGFloat {
+    static func totalHeight(config: TimetableLayoutConfig) -> CGFloat {
         config.segments.reduce(0) { $0 + $1.visualHeight }
     }
 
@@ -38,7 +38,7 @@ enum TimeMapper {
     /// 越界处理：
     ///   - 早于第一个 segment：返回 0
     ///   - 晚于最后一个 segment：返回 totalHeight
-    static func timeToY(_ time: String, config: TimetableConfig) -> CGFloat {
+    static func timeToY(_ time: String, config: TimetableLayoutConfig) -> CGFloat {
         let timeMin = timeToMinutes(time)
         var y: CGFloat = 0
 
@@ -76,7 +76,7 @@ enum TimeMapper {
     static func slotToYAndHeight(
         startSlot: Int,
         endSlot: Int,
-        config: TimetableConfig
+        config: TimetableLayoutConfig
     ) -> (y: CGFloat, height: CGFloat) {
         var y: CGFloat = 0
         var height: CGFloat = 0
