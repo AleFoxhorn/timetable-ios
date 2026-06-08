@@ -121,6 +121,7 @@ struct EventEditorScreen: View {
     @State private var draft: EventDraft
     @State private var isTimeExpanded: Bool
     @State private var showUnsavedDialog = false
+    @State private var reminderMessage: String?
     @State private var validationMessage: String?
     @State private var activeTimeField: EventTimeField?
 
@@ -214,18 +215,21 @@ struct EventEditorScreen: View {
             }
 
             if showUnsavedDialog {
-                AppColors.modalScrim
-                    .ignoresSafeArea()
-                    .onTapGesture { showUnsavedDialog = false }
+                WarningPopoverOverlay(
+                    onDismiss: { showUnsavedDialog = false }
+                ) {
+                    QuitWarningPopover(
+                        onCancel: { showUnsavedDialog = false },
+                        onConfirmExit: {
+                            showUnsavedDialog = false
+                            dismiss()
+                        }
+                    )
+                }
+            }
 
-                EventUnsavedChangesDialogView(
-                    onConfirmExit: {
-                        showUnsavedDialog = false
-                        dismiss()
-                    },
-                    onCancel: { showUnsavedDialog = false },
-                    onDismissByBackgroundTap: { showUnsavedDialog = false }
-                )
+            if let reminderMessage {
+                InputReminderOverlay(message: reminderMessage)
             }
         }
         .sheet(item: $activeTimeField) { field in
@@ -260,14 +264,20 @@ struct EventEditorScreen: View {
         style: EventInputRowStyle,
         text: Binding<String>
     ) -> some View {
-        let rowVariant = rowVariant(for: style, title: title, text: text.wrappedValue, placeholder: placeholder)
+        let rowVariant = rowVariant(for: style, title: title)
 
         ZStack {
             NewScheduleRow(variant: rowVariant, onTap: {})
 
             HStack(spacing: 0) {
                 Spacer()
-                TextField("", text: text)
+                TextField(
+                    "",
+                    text: text,
+                    prompt: Text(placeholder)
+                        .font(.custom("MiSans-Regular", size: 16))
+                        .foregroundColor(.gray)
+                )
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .font(.custom("MiSans-Regular", size: 16))
@@ -358,7 +368,7 @@ struct EventEditorScreen: View {
     private var notesRow: some View {
         ZStack(alignment: .topLeading) {
             NewScheduleRow(
-                variant: .v5_notesTop(label: "事项备注：", placeholder: draft.notes.isEmpty ? "……" : draft.notes),
+                variant: .v5_notesTop(label: "事项备注：", placeholder: ""),
                 onTap: {}
             )
 
@@ -374,7 +384,7 @@ struct EventEditorScreen: View {
             if draft.notes.isEmpty {
                 Text("……")
                     .font(.custom("MiSans-Regular", size: 16))
-                    .foregroundColor(.black.opacity(0.75))
+                    .foregroundColor(.gray)
                     .padding(.leading, 37)
                     .padding(.top, 47)
                     .allowsHitTesting(false)
@@ -426,8 +436,13 @@ struct EventEditorScreen: View {
     }
 
     private func handleSaveTapped() {
+        if draft.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            showReminder("请输入事项名称！")
+            return
+        }
+
         guard draft.hasConfiguredTime else {
-            validationMessage = "请选择事项时间"
+            showReminder("请选择事项时间！")
             return
         }
 
@@ -449,16 +464,13 @@ struct EventEditorScreen: View {
 
     private func rowVariant(
         for style: EventInputRowStyle,
-        title: String,
-        text: String,
-        placeholder: String
+        title: String
     ) -> NewScheduleRow.Variant {
-        let display = text.isEmpty ? placeholder : ""
         switch style {
         case .top:
-            return .v3_textFieldTop(label: title, placeholder: display)
+            return .v3_textFieldTop(label: title, placeholder: "")
         case .round:
-            return .v2_textFieldRound(label: title, placeholder: display)
+            return .v2_textFieldRound(label: title, placeholder: "")
         }
     }
 
@@ -468,6 +480,16 @@ struct EventEditorScreen: View {
         formatter.dateFormat = "EEE"
         return formatter
     }()
+
+    private func showReminder(_ message: String) {
+        reminderMessage = message
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+            if reminderMessage == message {
+                reminderMessage = nil
+            }
+        }
+    }
 
     private static func makeWeekDates(from currentDate: Date) -> [Date] {
         let calendar = Calendar.current
@@ -566,67 +588,6 @@ private struct EventTimePickerSheet: View {
             .labelsHidden()
         }
         .presentationBackground(.ultraThinMaterial)
-    }
-}
-
-private struct EventUnsavedChangesDialogView: View {
-    let onConfirmExit: () -> Void
-    let onCancel: () -> Void
-    let onDismissByBackgroundTap: () -> Void
-
-    var body: some View {
-        VStack(spacing: 0) {
-            Text("尚未保存")
-                .font(.system(size: 20, weight: .medium))
-                .foregroundColor(AppColors.textPrimary)
-                .padding(.top, 18)
-
-            Text("当前修改尚未保存，确认退出吗？")
-                .font(.system(size: 14))
-                .foregroundColor(AppColors.textPrimary.opacity(0.7))
-                .padding(.top, 8)
-                .padding(.bottom, 18)
-
-            Divider()
-
-            HStack(spacing: 0) {
-                Button(action: onCancel) {
-                    Text("取消")
-                        .font(.system(size: 17))
-                        .foregroundColor(AppColors.textPrimary)
-                        .frame(
-                            minWidth: 0,
-                            idealWidth: nil,
-                            maxWidth: .infinity,
-                            minHeight: 50,
-                            idealHeight: nil,
-                            maxHeight: nil,
-                            alignment: .center
-                        )
-                }
-
-                Divider()
-
-                Button(action: onConfirmExit) {
-                    Text("退出")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundColor(AppColors.textPrimary)
-                        .frame(
-                            minWidth: 0,
-                            idealWidth: nil,
-                            maxWidth: .infinity,
-                            minHeight: 50,
-                            idealHeight: nil,
-                            maxHeight: nil,
-                            alignment: .center
-                        )
-                }
-            }
-        }
-        .frame(width: 238)
-        .background(AppColors.surfacePrimary)
-        .clipShape(RoundedRectangle(cornerRadius: 18))
-        .onTapGesture {}
     }
 }
 

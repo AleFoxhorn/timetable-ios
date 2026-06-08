@@ -138,6 +138,40 @@ import Foundation
         }
     }
 
+    func deleteCourseFromSelectedWeek(courseID: UUID, week: Int) {
+        guard let courseIndex = courses.firstIndex(where: { $0.id == courseID }) else { return }
+
+        let targetInstanceIDs = Set(
+            courseCardInstances
+                .filter { $0.courseId == courseID && $0.week == week }
+                .map(\.id)
+        )
+
+        courses[courseIndex].weeks.removeAll { $0 == week }
+
+        if courses[courseIndex].weeks.isEmpty {
+            removeCourseCascade(courseID: courseID)
+        } else {
+            courseCardInstances.removeAll { targetInstanceIDs.contains($0.id) }
+            courseTasks.removeAll { targetInstanceIDs.contains($0.courseCardInstanceId) }
+
+            if let flippedCourseCardInstanceID, targetInstanceIDs.contains(flippedCourseCardInstanceID) {
+                self.flippedCourseCardInstanceID = nil
+            }
+            if let activeTaskPopoverCourseCardInstanceID, targetInstanceIDs.contains(activeTaskPopoverCourseCardInstanceID) {
+                dismissTaskPopover()
+            }
+        }
+
+        do {
+            try persistCourses()
+            try persistCourseCardInstances()
+            try persistCourseTasks()
+        } catch {
+            print("Failed to save courses.json: \(error)")
+        }
+    }
+
     func addEvent(_ event: ScheduleEvent) {
         events.append(event)
         sortEvents()
@@ -165,6 +199,24 @@ import Foundation
 
     func deleteEvent(id: UUID) {
         events.removeAll { $0.id == id }
+        do {
+            try persistEvents()
+        } catch {
+            print("Failed to save events.json: \(error)")
+        }
+    }
+
+    func deleteEventFromSelectedWeek(id: UUID, week: Int) {
+        guard let index = events.firstIndex(where: { $0.id == id }) else { return }
+        var event = events[index]
+        event.weeks.removeAll { $0 == week }
+
+        if event.weeks.isEmpty || event.repeatRule == .none {
+            events.remove(at: index)
+        } else {
+            events[index] = event
+        }
+
         do {
             try persistEvents()
         } catch {

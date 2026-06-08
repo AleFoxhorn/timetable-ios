@@ -87,7 +87,7 @@ struct CreateANewCourseView: View {
     @State private var draft: CourseDraft
     @State private var expandedSection: ExpandedEditorSection?
     @State private var showUnsavedDialog = false
-    @State private var showTimeValidationError = false
+    @State private var reminderMessage: String?
 
     init(
         mode: CourseEditorMode,
@@ -172,24 +172,22 @@ struct CreateANewCourseView: View {
             }
 
             if showUnsavedDialog {
-                AppColors.modalScrim
-                    .ignoresSafeArea()
-                    .onTapGesture { showUnsavedDialog = false }
-
-                UnsavedChangesDialogView(
-                    onConfirmExit: {
-                        showUnsavedDialog = false
-                        dismiss()
-                    },
-                    onCancel: { showUnsavedDialog = false },
-                    onDismissByBackgroundTap: { showUnsavedDialog = false }
-                )
+                WarningPopoverOverlay(
+                    onDismiss: { showUnsavedDialog = false }
+                ) {
+                    QuitWarningPopover(
+                        onCancel: { showUnsavedDialog = false },
+                        onConfirmExit: {
+                            showUnsavedDialog = false
+                            dismiss()
+                        }
+                    )
+                }
             }
-        }
-        .alert("请先填写课程时段", isPresented: $showTimeValidationError) {
-            Button("确定", role: .cancel) {}
-        } message: {
-            Text("至少需要选择上课周几和节次，课程才可以保存。")
+
+            if let reminderMessage {
+                InputReminderOverlay(message: reminderMessage)
+            }
         }
         .presentationBackground(AppColors.screenBackground)
     }
@@ -203,23 +201,44 @@ struct CreateANewCourseView: View {
     }
 
     private func handleSaveTapped() {
+        if draft.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            showReminder("请输入课程名称！")
+            return
+        }
+
         guard let course = draft.buildCourse(existingID: initialCourse?.id, defaultWeek: currentWeek) else {
-            showTimeValidationError = true
+            showReminder("请选择课程时段！")
             return
         }
         onSave(course)
         dismiss()
     }
 
+    private func showReminder(_ message: String) {
+        reminderMessage = message
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+            if reminderMessage == message {
+                reminderMessage = nil
+            }
+        }
+    }
+
     @ViewBuilder
     private func inputRow(title: String, placeholder: String, style: InputRowStyle, text: Binding<String>) -> some View {
-        let rowVariant = rowVariant(for: style, title: title, text: text.wrappedValue, placeholder: placeholder)
+        let rowVariant = rowVariant(for: style, title: title)
         ZStack {
             NewScheduleRow(variant: rowVariant, onTap: {})
 
             HStack(spacing: 0) {
                 Spacer()
-                TextField("", text: text)
+                TextField(
+                    "",
+                    text: text,
+                    prompt: Text(placeholder)
+                        .font(.custom("MiSans-Regular", size: 16))
+                        .foregroundColor(.gray)
+                )
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .font(.custom("MiSans-Regular", size: 16))
@@ -233,15 +252,14 @@ struct CreateANewCourseView: View {
         .frame(maxWidth: .infinity)
     }
 
-    private func rowVariant(for style: InputRowStyle, title: String, text: String, placeholder: String) -> NewScheduleRow.Variant {
-        let display = text.isEmpty ? placeholder : ""
+    private func rowVariant(for style: InputRowStyle, title: String) -> NewScheduleRow.Variant {
         switch style {
         case .top:
-            return .v3_textFieldTop(label: title, placeholder: display)
+            return .v3_textFieldTop(label: title, placeholder: "")
         case .round:
-            return .v2_textFieldRound(label: title, placeholder: display)
+            return .v2_textFieldRound(label: title, placeholder: "")
         case .bottom:
-            return .v1_textFieldBottom(label: title, placeholder: display)
+            return .v1_textFieldBottom(label: title, placeholder: "")
         }
     }
 
@@ -335,67 +353,6 @@ private struct SingleWeekdaySelector: View {
         .onTapGesture {
             selectedWeekday = (selectedWeekday == index + 1) ? nil : index + 1
         }
-    }
-}
-
-private struct UnsavedChangesDialogView: View {
-    let onConfirmExit: () -> Void
-    let onCancel: () -> Void
-    let onDismissByBackgroundTap: () -> Void
-
-    var body: some View {
-        VStack(spacing: 0) {
-            Text("尚未保存")
-                .font(.system(size: 20, weight: .medium))
-                .foregroundColor(AppColors.textPrimary)
-                .padding(.top, 18)
-
-            Text("当前修改尚未保存，确认退出吗？")
-                .font(.system(size: 14))
-                .foregroundColor(AppColors.textPrimary.opacity(0.7))
-                .padding(.top, 8)
-                .padding(.bottom, 18)
-
-            Divider()
-
-            HStack(spacing: 0) {
-                Button(action: onCancel) {
-                    Text("取消")
-                        .font(.system(size: 17))
-                        .foregroundColor(AppColors.textPrimary)
-                        .frame(
-                            minWidth: 0,
-                            idealWidth: nil,
-                            maxWidth: .infinity,
-                            minHeight: 50,
-                            idealHeight: nil,
-                            maxHeight: nil,
-                            alignment: .center
-                        )
-                }
-
-                Divider()
-
-                Button(action: onConfirmExit) {
-                    Text("退出")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundColor(AppColors.textPrimary)
-                        .frame(
-                            minWidth: 0,
-                            idealWidth: nil,
-                            maxWidth: .infinity,
-                            minHeight: 50,
-                            idealHeight: nil,
-                            maxHeight: nil,
-                            alignment: .center
-                        )
-                }
-            }
-        }
-        .frame(width: 238)
-        .background(AppColors.surfacePrimary)
-        .clipShape(RoundedRectangle(cornerRadius: 18))
-        .onTapGesture {}
     }
 }
 

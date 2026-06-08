@@ -63,6 +63,7 @@
 		F20000712FF1000000F20007 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000702FF1000000F20007 /* TaskListCell.swift */; };
 		F20000812FF1000000F20008 /* CourseTaskPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000802FF1000000F20008 /* CourseTaskPopover.swift */; };
 		F20000912FF1000000F20009 /* ScheduleView+TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000902FF1000000F20009 /* ScheduleView+TaskList.swift */; };
+		F30000112FF2000000F30001 /* WarningPopovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30000102FF2000000F30001 /* WarningPopovers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		F20000702FF1000000F20007 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		F20000802FF1000000F20008 /* CourseTaskPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTaskPopover.swift; sourceTree = "<group>"; };
 		F20000902FF1000000F20009 /* ScheduleView+TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleView+TaskList.swift"; sourceTree = "<group>"; };
+		F30000102FF2000000F30001 /* WarningPopovers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningPopovers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				AC2002012FD9000000AC0002 /* CourseDetailsPopover.swift */,
 				AC3003012FD9000000AC0005 /* EventDetailsPopover.swift */,
 				F20000802FF1000000F20008 /* CourseTaskPopover.swift */,
+				F30000102FF2000000F30001 /* WarningPopovers.swift */,
 				DD0001012FD9000000DD0001 /* CycleSelectionSection.swift */,
 				DD0002012FD9000000DD0002 /* DateSelectionSection.swift */,
 				DD0003012FD9000000DD0003 /* CourseSessionSelectionSection.swift */,
@@ -452,6 +455,7 @@
 				F20000612FF1000000F20006 /* EditTaskCell.swift in Sources */,
 				F20000712FF1000000F20007 /* TaskListCell.swift in Sources */,
 				F20000812FF1000000F20008 /* CourseTaskPopover.swift in Sources */,
+				F30000112FF2000000F30001 /* WarningPopovers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

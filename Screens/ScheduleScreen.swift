@@ -7,6 +7,23 @@ struct ScheduleScreen: View {
         case next
     }
 
+    private enum ActiveDeleteWarning: Identifiable {
+        case singleEvent(ScheduleEvent)
+        case pluralEvents(ScheduleEvent)
+        case course(Course)
+
+        var id: String {
+            switch self {
+            case .singleEvent(let event):
+                return "single-event-\(event.id.uuidString)"
+            case .pluralEvents(let event):
+                return "plural-events-\(event.id.uuidString)"
+            case .course(let course):
+                return "course-\(course.id.uuidString)"
+            }
+        }
+    }
+
     @Bindable var viewModel: ScheduleViewModel
     @Bindable var timetableViewModel: TimetableViewModel
 
@@ -14,6 +31,7 @@ struct ScheduleScreen: View {
     @State private var activeSheet: ActiveSheet?
     @State private var detailsCourse: Course?
     @State private var detailsEvent: ScheduleEvent?
+    @State private var activeDeleteWarning: ActiveDeleteWarning?
     @State private var weekSwipeDirection: WeekSwipeDirection = .next
 
     let onCreateSchedule: () -> Void
@@ -81,7 +99,7 @@ struct ScheduleScreen: View {
                     onReset: {
                         detailsCourse = nil
                         viewModel.clearFlippedCourseCard()
-                        viewModel.deleteCourse(course)
+                        activeDeleteWarning = .course(course)
                     },
                     onDismiss: {
                         detailsCourse = nil
@@ -102,12 +120,16 @@ struct ScheduleScreen: View {
                     },
                     onReset: {
                         detailsEvent = nil
-                        viewModel.deleteEvent(event)
+                        activeDeleteWarning = deleteWarning(for: event)
                     },
                     onDismiss: {
                         detailsEvent = nil
                     }
                 )
+            }
+
+            if let activeDeleteWarning {
+                deleteWarningOverlay(for: activeDeleteWarning)
             }
 
             TaskListOverlay(viewModel: viewModel)
@@ -173,6 +195,56 @@ struct ScheduleScreen: View {
         Color.black.opacity(0.35)
             .ignoresSafeArea()
             .onTapGesture(perform: onTap)
+    }
+
+    private func deleteWarning(for event: ScheduleEvent) -> ActiveDeleteWarning {
+        event.repeatRule == .none ? .singleEvent(event) : .pluralEvents(event)
+    }
+
+    @ViewBuilder
+    private func deleteWarningOverlay(for warning: ActiveDeleteWarning) -> some View {
+        WarningPopoverOverlay(
+            onDismiss: { activeDeleteWarning = nil }
+        ) {
+            switch warning {
+            case .singleEvent(let event):
+                DeleteWarningForSingleEventPopover(
+                    onCancel: { activeDeleteWarning = nil },
+                    onConfirmDelete: {
+                        viewModel.deleteEvent(event)
+                        activeDeleteWarning = nil
+                    }
+                )
+            case .pluralEvents(let event):
+                DeleteWarningForPluralEventsPopover(
+                    onDeleteThisWeek: {
+                        viewModel.deleteEventFromSelectedWeek(
+                            id: event.id,
+                            week: viewModel.selectedWeek
+                        )
+                        activeDeleteWarning = nil
+                    },
+                    onDeleteAll: {
+                        viewModel.deleteEvent(event)
+                        activeDeleteWarning = nil
+                    }
+                )
+            case .course(let course):
+                DeleteWarningForCoursePopover(
+                    onDeleteThisWeek: {
+                        viewModel.deleteCourseFromSelectedWeek(
+                            courseID: course.id,
+                            week: viewModel.selectedWeek
+                        )
+                        activeDeleteWarning = nil
+                    },
+                    onDeleteAll: {
+                        viewModel.deleteCourse(course)
+                        activeDeleteWarning = nil
+                    }
+                )
+            }
+        }
     }
 
     private var scheduleContent: some View {
