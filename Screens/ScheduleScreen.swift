@@ -146,6 +146,7 @@ struct ScheduleScreen: View {
                 )
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
+                .presentationCornerRadius(0)
 
             case .editCourse(let course):
                 CreateANewCourseView(
@@ -158,6 +159,7 @@ struct ScheduleScreen: View {
                 )
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
+                .presentationCornerRadius(0)
 
             case .createEvent:
                 CreateANewEventView(
@@ -172,6 +174,7 @@ struct ScheduleScreen: View {
                 )
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
+                .presentationCornerRadius(0)
 
             case .editEvent(let event):
                 EditEventView(
@@ -187,6 +190,7 @@ struct ScheduleScreen: View {
                 )
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
+                .presentationCornerRadius(0)
             }
         }
     }

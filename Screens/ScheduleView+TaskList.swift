@@ -17,9 +17,8 @@ struct TaskListOverlay: View {
                     tasks: viewModel.activeCourseTasks,
                     editingTaskId: viewModel.editingTaskID,
                     editingTaskText: viewModel.editingTaskText,
-                    hasDraftNewTask: viewModel.draftTaskCourseCardInstanceID == instance.id,
                     draftTaskText: viewModel.draftTaskText,
-                    onAddTask: {
+                    onActivateDraft: {
                         viewModel.beginDraftTask(for: instance.id)
                     },
                     onTapTask: { taskID in
@@ -34,7 +33,7 @@ struct TaskListOverlay: View {
                     onDeleteTask: { taskID in
                         viewModel.deleteTask(taskID)
                     },
-                    onCommitDraft: {
+                    onSubmitDraft: {
                         viewModel.commitDraftTaskIfNeeded()
                     },
                     onCommitTask: { taskID in

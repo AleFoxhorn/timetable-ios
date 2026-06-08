@@ -35,7 +35,12 @@ struct TaskListCell: View {
             )
         case .add:
             EditTaskBlankCell(
+                text: text,
                 isAddEnabled: isAddEnabled,
+                focusedField: focusedField,
+                focusTarget: focusTarget,
+                onTapBlank: { onTapTask?() },
+                onTextChange: { onTextChange?($0) },
                 onTapAdd: { onTapAdd?() }
             )
         }

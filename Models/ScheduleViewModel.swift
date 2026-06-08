@@ -396,7 +396,7 @@ import Foundation
         activeTaskPopoverCourseCardInstanceID = courseCardInstanceID
         editingTaskID = nil
         editingTaskText = ""
-        draftTaskCourseCardInstanceID = nil
+        draftTaskCourseCardInstanceID = courseCardInstanceID
         draftTaskText = ""
     }
 
@@ -409,7 +409,6 @@ import Foundation
     }
 
     func commitActiveTaskEditorIfNeeded() {
-        commitDraftTaskIfNeeded()
         if let editingTaskID {
             commitEditingTaskIfNeeded(editingTaskID)
         }
@@ -417,7 +416,6 @@ import Foundation
 
     func beginDraftTask(for courseCardInstanceID: UUID) {
         draftTaskCourseCardInstanceID = courseCardInstanceID
-        draftTaskText = ""
         editingTaskID = nil
         editingTaskText = ""
     }
@@ -429,10 +427,6 @@ import Foundation
     func commitDraftTaskIfNeeded() {
         guard let draftTaskCourseCardInstanceID else { return }
         let trimmed = draftTaskText.trimmingCharacters(in: .whitespacesAndNewlines)
-        defer {
-            self.draftTaskCourseCardInstanceID = nil
-            self.draftTaskText = ""
-        }
         guard !trimmed.isEmpty else { return }
 
         courseTasks.append(
@@ -446,6 +440,8 @@ import Foundation
         } catch {
             print("Failed to save course_tasks.json: \(error)")
         }
+
+        draftTaskText = ""
     }
 
     func startEditingTask(_ taskID: UUID) {

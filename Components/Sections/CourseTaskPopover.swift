@@ -9,14 +9,13 @@ struct CourseTaskPopover: View {
     let tasks: [CourseTask]
     let editingTaskId: UUID?
     let editingTaskText: String
-    let hasDraftNewTask: Bool
     let draftTaskText: String
-    let onAddTask: () -> Void
+    let onActivateDraft: () -> Void
     let onTapTask: (UUID) -> Void
     let onChangeDraftText: (String) -> Void
     let onChangeTaskText: (String) -> Void
     let onDeleteTask: (UUID) -> Void
-    let onCommitDraft: () -> Void
+    let onSubmitDraft: () -> Void
     let onCommitTask: (UUID) -> Void
 
     @FocusState private var focusedField: TaskFieldFocus?
@@ -40,7 +39,7 @@ struct CourseTaskPopover: View {
                                     taskId: task.id,
                                     text: editingTaskId == task.id ? editingTaskText : task.text,
                                     variant: editingTaskId == task.id ? .edit : .display,
-                                    isFirstRow: index == 0 && !hasDraftNewTask,
+                                    isFirstRow: index == 0,
                                     isAddEnabled: false,
                                     focusedField: $focusedField,
                                     focusTarget: .existing(task.id),
@@ -52,22 +51,6 @@ struct CourseTaskPopover: View {
                                     onTapAdd: nil,
                                     onTextChange: { onChangeTaskText($0) },
                                     onDelete: { onDeleteTask(task.id) }
-                                )
-                            }
-
-                            if hasDraftNewTask {
-                                TaskListCell(
-                                    taskId: nil,
-                                    text: draftTaskText,
-                                    variant: .edit,
-                                    isFirstRow: tasks.isEmpty,
-                                    isAddEnabled: false,
-                                    focusedField: $focusedField,
-                                    focusTarget: .draft,
-                                    onTapTask: nil,
-                                    onTapAdd: nil,
-                                    onTextChange: { onChangeDraftText($0) },
-                                    onDelete: nil
                                 )
                             }
                         }
@@ -88,15 +71,8 @@ struct CourseTaskPopover: View {
             commit(field: oldValue)
         }
         .onAppear {
-            if hasDraftNewTask {
-                focusedField = .draft
-            } else if let editingTaskId {
+            if let editingTaskId {
                 focusedField = .existing(editingTaskId)
-            }
-        }
-        .onChange(of: hasDraftNewTask, initial: false) { _, isActive in
-            if isActive {
-                focusedField = .draft
             }
         }
         .onChange(of: editingTaskId, initial: false) { _, newValue in
@@ -115,7 +91,7 @@ struct CourseTaskPopover: View {
     private func commit(field: TaskFieldFocus?) {
         switch field {
         case .draft:
-            onCommitDraft()
+            break
         case .existing(let id):
             onCommitTask(id)
         case .none:
@@ -126,19 +102,23 @@ struct CourseTaskPopover: View {
     private var addRow: some View {
         TaskListCell(
             taskId: nil,
-            text: "",
+            text: draftTaskText,
             variant: .add,
             isFirstRow: false,
-            isAddEnabled: !hasDraftNewTask,
+            isAddEnabled: true,
             focusedField: $focusedField,
-            focusTarget: nil,
-            onTapTask: nil,
-            onTapAdd: {
+            focusTarget: .draft,
+            onTapTask: {
                 commitCurrentFocus()
-                onAddTask()
+                onActivateDraft()
                 focusedField = .draft
             },
-            onTextChange: nil,
+            onTapAdd: {
+                commitCurrentFocus()
+                onSubmitDraft()
+                focusedField = .draft
+            },
+            onTextChange: { onChangeDraftText($0) },
             onDelete: nil
         )
     }

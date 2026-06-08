@@ -522,6 +522,7 @@ struct BlankScheduleView: View {
                 )
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
+                .presentationCornerRadius(0)
             case .createEvent:
                 CreateANewEventView(
                     currentWeek: scheduleViewModel.selectedWeek,
@@ -535,6 +536,7 @@ struct BlankScheduleView: View {
                 )
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
+                .presentationCornerRadius(0)
             }
         }
     }

@@ -7,13 +7,11 @@ struct TaskButtonPlus: View {
         Button(action: onTap) {
             ZStack {
                 Circle()
-                    .fill(AppColors.surfacePrimary)
-                Circle()
-                    .stroke(AppColors.borderPrimary, lineWidth: 1.5)
+                    .fill(AppColors.surfaceInverse)
 
                 Image(systemName: "plus")
                     .font(.system(size: 13, weight: .bold))
-                    .foregroundColor(AppColors.textPrimary)
+                    .foregroundColor(AppColors.surfacePrimary)
             }
             .frame(width: AppSpacing.taskActionButtonSize, height: AppSpacing.taskActionButtonSize)
         }
