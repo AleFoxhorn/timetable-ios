@@ -125,7 +125,7 @@ struct CreateANewCourseView: View {
 
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 2) {
-                        inputRow(title: "课程名称", placeholder: "输入课程名称", style: .top, text: $draft.title)
+                        inputRow(title: "课程名称", placeholder: "输入课程名称", style: .first, text: $draft.title)
 
                         inputRow(title: "课程地点", placeholder: "输入课程地点", style: .round, text: $draft.locationRaw)
 
@@ -163,7 +163,7 @@ struct CreateANewCourseView: View {
                             }
                         }
 
-                        inputRow(title: "授课教师", placeholder: "输入授课教师", style: .bottom, text: $draft.teacher)
+                        inputRow(title: "授课教师", placeholder: "输入授课教师", style: .last, text: $draft.teacher)
                     }
                     .frame(width: 356, alignment: .topLeading)
                     .padding(.horizontal, 18.5)
@@ -254,12 +254,12 @@ struct CreateANewCourseView: View {
 
     private func rowVariant(for style: InputRowStyle, title: String) -> NewScheduleRow.Variant {
         switch style {
-        case .top:
-            return .v3_textFieldTop(label: title, placeholder: "")
+        case .first:
+            return .v1_textFieldBottom(label: title, placeholder: "")
         case .round:
             return .v2_textFieldRound(label: title, placeholder: "")
-        case .bottom:
-            return .v1_textFieldBottom(label: title, placeholder: "")
+        case .last:
+            return .v3_textFieldTop(label: title, placeholder: "")
         }
     }
 
@@ -320,9 +320,9 @@ struct CreateANewCourseView: View {
 }
 
 private enum InputRowStyle {
-    case top
+    case first
     case round
-    case bottom
+    case last
 }
 
 private struct SingleWeekdaySelector: View {

@@ -176,7 +176,7 @@ struct EventEditorScreen: View {
                         inputRow(
                             title: "事项名称",
                             placeholder: "输入事项名称",
-                            style: .top,
+                            style: .first,
                             text: $draft.title
                         )
 
@@ -467,8 +467,8 @@ struct EventEditorScreen: View {
         title: String
     ) -> NewScheduleRow.Variant {
         switch style {
-        case .top:
-            return .v3_textFieldTop(label: title, placeholder: "")
+        case .first:
+            return .v1_textFieldBottom(label: title, placeholder: "")
         case .round:
             return .v2_textFieldRound(label: title, placeholder: "")
         }
@@ -507,7 +507,7 @@ struct EventEditorScreen: View {
 }
 
 private enum EventInputRowStyle {
-    case top
+    case first
     case round
 }
 
